@@ -137,7 +137,7 @@ $ActualDate = (Get-Date -Format 'ddMMyyyy_HHmm').ToString()
 
 $esxiHostList = @()
 
-$esxiHostList = Get-Content -Path "V:\BOX\INPUT\VSPHERE\HostList.txt"
+$esxiHostList = Get-VMHost | Select-Object -ExpandProperty Name | Sort-Object
 
 
 foreach ($esxiHostName in $esxiHostList)
